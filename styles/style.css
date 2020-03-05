@@ -1,0 +1,445 @@
+/* html, body
+---------------------------------------------------*/
+
+html {
+    font-size: 16px
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightcyan
+}
+
+/* header
+---------------------------------------------------*/
+
+header {
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/portal.jpg");
+    background-position-y: 50%;
+    background-size: 100%;
+    position: relative
+}
+
+header h1 {
+    margin: 0;
+    color: darkblue;
+    padding: 10px;
+    font-size: 2rem;
+    /* 100px; */
+    position: absolute;
+    font-family: 'Caveat Brush', cursive;
+    top: 20px;
+    left: 50px
+}
+
+header h1 a {
+    color: darkblue;
+    text-decoration: none
+}
+
+header h1 a:hover {
+    color: darkblue;
+    text-decoration: none
+}
+
+h2 {
+    color: darkblue;
+    text-shadow: 2px 2px 5px aquamarine;
+    font-size: 30px;
+    margin: 10px;
+    font-family: 'Marck Script', cursive;
+}
+
+h3 {
+    color: darkblue;
+    font-size: 25px;
+    margin: 20px;
+    font-family: 'Marck Script', cursive;
+}
+
+/* navigering
+---------------------------------------------------*/
+
+nav {
+    width: 100%;
+    background-color: darkblue;
+    height: 50px
+}
+
+nav ul {
+    margin: 0;
+    padding-left: 10px;
+    min-width: 1080px
+}
+
+nav ul li {
+    float: left;
+    list-style: none;
+    margin: 5px 10px;
+    font-size: 2rem;
+    font-family: 'Caveat Brush', cursive;
+    color: lightblue
+}
+
+nav ul li a {
+    color: lightblue;
+    text-decoration: none
+}
+
+nav ul li a:hover {
+    color: white;
+    text-decoration: underline
+}
+
+/* layout av ytor
+---------------------------------------------------*/
+
+.container {
+    width: 100%;
+    display: flex;
+    padding: 10px
+}
+
+.container::after {
+    content: ” ”;
+    display: block;
+    clear: both
+}
+
+div#page {
+    width: 75%;
+    margin: 0 auto
+}
+
+main,
+aside {
+    box-sizing: border-box;
+    float: left;
+    padding: 10px
+}
+
+main {
+    width: 67%;
+    min-width: 830px
+}
+
+aside {
+    width: 33%;
+    min-width: 250px;
+}
+
+
+
+/* sidfot
+---------------------------------------------------*/
+div#foot {
+    width: 100%;
+    margin: 0 auto
+}
+
+footer {
+    width: 100%;
+    height: 80px;
+    padding: 0 10px;
+    background-color: rgb(152, 165, 235);
+    position: relative
+}
+
+footer img {
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    width: 150px;
+    border: none;
+}
+
+/* Ange border-box för div element för att inkludera border */
+div {
+    box-sizing: border-box
+}
+
+/* Egenskaper för div-element med class gallery */
+div.gallery {
+    background-color: rgb(50, 50, 50)
+}
+
+/* Egenskaper för respektive item */
+figure.item {
+    width: 25%;
+    /* Om 4 bilder ska visas */
+    border: 1px solid black;
+    background-color: rgb(225, 225, 225);
+    margin: 0
+}
+
+/* Storlek på bilden */
+figure.item img {
+    width: 100%
+}
+
+/* Bildtexten som visas under bilden */
+figure.item figcaption {
+    padding: 10px
+}
+
+/* Visuell effekt som visas när man pekar på en bild */
+figure.item img:hover {
+    opacity: 0.7
+}
+
+/* typografi, text, teckensnitt
+---------------------------------------------------*/
+
+h1 {
+    color: darkblue;
+    font-size: 2.5em;
+    font-family: 'Caveat Brush', cursive;
+}
+
+h2 {
+    color: aquamarine;
+    font-size: 2em
+}
+
+h3 {
+    color: blue;
+    font-size: 1.6em
+}
+
+h4 {
+    color: darkslateblue;
+    font-size: 1.2em
+}
+
+h4.aside {
+    background-color: rgb(152, 165, 235);
+    padding-left: 5px
+}
+
+h4.aside_gallery {
+    border: black;
+    border-style: solid
+}
+
+p {
+    line-height: 1.5em;
+    padding-left: 10px
+}
+
+blockquote {
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+blockquote.poetry {
+    font-family: 'Marck Script', cursive;
+    text-align: center;
+    color: blueviolet
+}
+
+blockquote.runes {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-style: initial;
+    color: brown
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline
+}
+
+ul {
+    list-style-type: circle;
+    list-style-position: inside
+}
+
+ol {
+    list-style-type: upper-latin;
+    list-style-position: inside
+}
+
+b {
+    color: darkslateblue;
+    font-size: 1.2em;
+    font-weight: 600
+}
+
+i {
+    color: darkslateblue;
+    font-size: 1.2em
+}
+
+q {
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+img {
+    border-radius: 4px;
+    border: 1px solid
+}
+
+
+/* tabell
+---------------------------------------------------*/
+table {
+    border-spacing: 5px;
+    border-width: 2px
+}
+
+th {
+    background-color: rgb(152, 165, 235);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+tr {
+    vertical-align: top;
+    padding: 10px 0
+}
+
+td {
+    padding: 10px 0;
+    text-align: left
+}
+
+/* formulär
+---------------------------------------------------*/
+form {
+    background-color: lightyellow;
+    /* floralwhite; ivory; lightskyblue; */
+    border: 3px solid darkblue;
+    border-radius: 4px;
+    padding-left: 2px
+}
+
+
+input[type=text] {
+    border: 2px solid darkblue;
+    border-radius: 4px;
+    width: 600px;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+input[type=number] {
+    border: 2px solid darkblue;
+    border-radius: 4px;
+    width: 30px;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+input,
+textarea,
+date {
+    border: 2px solid darkblue;
+    border-radius: 4px;
+    width: 200px;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+select {
+    border: 2px solid darkblue;
+    border-radius: 4px;
+    margin: 10px 0 20px 40px;
+    width: 217px;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+input[type=submit] {
+    border: 3px solid darkcyan;
+    border-radius: 4px;
+    width: 30%;
+    background-color: aquamarine;
+    color: darkblue;
+    font-family: 'Marck Script', cursive;
+    font-size: 40px;
+    margin: 20px 0 20px 280px;
+}
+
+input[type=submit]:hover {
+    color: blue;
+    font-weight: bold
+}
+
+form p input#header {
+    background-color: aquamarine;
+    width: 600px;
+}
+
+form p input#header2 {
+    background-color: lightblue;
+    margin: 10px 0 0 30px;
+    width: 570px;
+}
+
+form p input#created_by {
+    width: 130px;
+}
+
+form p input#question {
+    margin: 20px 0 0 10px;
+    width: 580px;
+}
+
+form p input#answer {
+    margin: 0 0 10px 20px;
+    width: 560px;
+}
+
+label {
+    color: darkblue;
+    text-shadow: 2px 2px 5px aquamarine;
+    font-size: 30px;
+    width: 300px;
+    margin: 5px;
+    font-family: 'Marck Script', cursive;
+}
+
+div.result_label {
+    /*    box-sizing: border-box; */
+    margin: 0 0 0 10px;
+    float: left;
+    width: 95px
+}
+
+div.result_text {
+    margin: 0 0 0 10px;
+    float: left;
+    width: 600px
+}
+
+/*
+div.answer_label {
+    margin: 0 0 0 10px; 
+    float: left;
+    width: 30px
+}
+
+div.answer_text {
+    margin: 0 0 0 10px; 
+    width: 400px
+}
+
+div.points_label {
+    margin: 0 0 0 10px; 
+    float: left;
+    width: 30px
+}
+
+div.points_text {
+    margin: 0 0 0 10px; 
+    float: left;
+    width: 30px
+}   */
+
+p:after {
+    display: block;
+    content: "";
+    clear: both;
+}
