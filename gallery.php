@@ -68,15 +68,38 @@
 
             </div>
 
+            <p></p>
+
+            <div class="gallery container">
+            
+            <!-- Figure element 4 för bild och bildtext -->
+            <figure class="item">
+
+            <!-- Bild -->
+            <img src="images/quiz_ex3.PNG" alt="Ex 5">
+
+            <!-- Bildtext -->
+            <figcaption>
+                Exempel 5
+            </figcaption>
+
+            </figure>
+        </div>
+
         </main>
 
         <aside>
                 <!-- Aside -->
     
                 <h4 style="margin-top: 6em" class="aside aside_gallery">
-                    Exempelbilder på att skapa quiz</h4>
+                    Exempelbilder
+                </h4>
+
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi rem ullam labore beatae incidunt velit, repellat praesentium illum tenetur eos esse suscipit consectetur inventore doloribus omnis modi officia corrupti cumque, corporis nostrum. Ipsum cumque fugit suscipit cupiditate neque. Velit odit accusantium saepe, possimus officiis quia consequuntur vero exercitationem non harum.
+                </p>
     
-            </aside>
+        </aside>
     
     </div>
 

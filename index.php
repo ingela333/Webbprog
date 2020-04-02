@@ -6,11 +6,6 @@
 
 <div id="page" class="container">
 
-    <aside>
-        <!-- Aside -->
-
-    </aside>
-
     <main>
         <!-- Main - Välkommen -->
 
@@ -18,9 +13,14 @@
             Välkommen till Quizmani!
         </h1>
 
-        <p>Här kan du svara på tester och skapa egna tester.</p>
+        <p>Här kan du skapa egna quiz eller svara på andras quiz.</p>
 
     </main>
+
+    <aside>
+        <!-- Aside -->
+
+    </aside>
 
 </div>
 

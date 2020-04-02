@@ -113,17 +113,19 @@
             <h4>Senast skapade quiz</h4>
 
             <p>
-                <ol>
-                    <li>Lorem, ipsum.</li>
-                    <li>Lorem, ipsum dolor.</li>
-                    <li>Lorem.</li>
-                </ol>
 
+                <ul style="list-style-image: url(images/q5.png)">
+                    <li>Lorem, ipsum?</li>
+                    <li>Dolor sit amet?</li>
+                    <li>Consectetur adipisicing?</li>
+                </ul>
 
             </p>
 
         </aside>
 
-        <?php
+        </div>
+
+<?php
     include "footer.php";
 ?>

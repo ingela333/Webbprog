@@ -17,7 +17,7 @@ body {
 header {
     width: 100%;
     height: 200px;
-    background-image: url("../images/portal.jpg");
+    background-image: url("../images/bg2.jpg"); 
     background-position-y: 50%;
     background-size: 100%;
     position: relative
@@ -45,21 +45,6 @@ header h1 a:hover {
     text-decoration: none
 }
 
-h2 {
-    color: darkblue;
-    text-shadow: 2px 2px 5px aquamarine;
-    font-size: 30px;
-    margin: 10px;
-    font-family: 'Marck Script', cursive;
-}
-
-h3 {
-    color: darkblue;
-    font-size: 25px;
-    margin: 20px;
-    font-family: 'Marck Script', cursive;
-}
-
 /* navigering
 ---------------------------------------------------*/
 
@@ -72,7 +57,7 @@ nav {
 nav ul {
     margin: 0;
     padding-left: 10px;
-    min-width: 1080px
+    min-width: 1080px 
 }
 
 nav ul li {
@@ -123,7 +108,7 @@ aside {
 
 main {
     width: 67%;
-    min-width: 830px
+     min-width: 830px 
 }
 
 aside {
@@ -163,14 +148,14 @@ div {
 
 /* Egenskaper för div-element med class gallery */
 div.gallery {
-    background-color: rgb(50, 50, 50)
+    background-color: rgb(152, 165, 235)
 }
 
 /* Egenskaper för respektive item */
 figure.item {
     width: 25%;
     /* Om 4 bilder ska visas */
-    border: 1px solid black;
+    border: 1px solid blue;
     background-color: rgb(225, 225, 225);
     margin: 0
 }
@@ -200,18 +185,24 @@ h1 {
 }
 
 h2 {
-    color: aquamarine;
+    color: darkblue;
+    text-shadow: 2px 2px 5px aquamarine;
+    font-size: 25px;
+    margin: 10px;
+    font-family: 'Marck Script', cursive;
     font-size: 2em
 }
 
 h3 {
     color: blue;
-    font-size: 1.6em
+    font-size: 1.8em;
+    font-family: 'Marck Script', cursive;
 }
 
 h4 {
-    color: darkslateblue;
-    font-size: 1.2em
+    color: blue;
+    font-size: 1.6em;
+    font-family: 'Caveat Brush', cursive;
 }
 
 h4.aside {
@@ -220,7 +211,7 @@ h4.aside {
 }
 
 h4.aside_gallery {
-    border: black;
+    border: darkblue;
     border-style: solid
 }
 
@@ -252,8 +243,9 @@ a:hover {
 }
 
 ul {
-    list-style-type: circle;
-    list-style-position: inside
+    list-style-type: center;
+    list-style-position: outside;
+    list-style-image: url(images/q5.png);
 }
 
 ol {
@@ -263,13 +255,14 @@ ol {
 
 b {
     color: darkslateblue;
-    font-size: 1.2em;
-    font-weight: 600
+    font-size: 1.1em;
+    
 }
 
 i {
-    color: darkslateblue;
-    font-size: 1.2em
+    color: blue;
+    font-size: 1.5em;
+    font-weight: bold
 }
 
 q {
@@ -291,17 +284,17 @@ table {
 }
 
 th {
-    background-color: rgb(152, 165, 235);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px 20px;
+    text-align: left
 }
 
 tr {
     vertical-align: top;
-    padding: 10px 0
 }
 
 td {
-    padding: 10px 0;
+    padding: 10px 20px;
     text-align: left
 }
 

@@ -2,6 +2,21 @@
     $title = "Quizmani - highscore";
     $menuItem = 4;
     include "header.php";
+
+    $server = "localhost"; // ansluta till server, vår dator
+    $username = "ingela333";  
+    $password = "phpmyadmin,01"; 
+    $db = "ingela333"; 
+
+    // skapa kontakt med databas
+    $link = new mysqli($server, $username, $password, $db);
+
+    // testa kontakten - om det finns något fel: skriv ut felet
+    if ($link->connect_error){
+        echo $link->connect_error;
+        exit;
+    }
+    // kommer ni hit i koden så fungerar databaskontakten!    
 ?>
 
 <div id="page" class="container">
@@ -13,9 +28,42 @@
             Highscore!
         </h1>
 
-        <p>Sidan är under uppbyggnad...</p>
+        <?php
+            // Hämta tabell quiz_head sorterat på antal gånger DESC
+            $sql = "SELECT * FROM quiz_head ORDER BY run DESC";
+            $data = $link->query($sql);
+            
+            // Visa rubrik
+            echo "<h3>Quiz som har testats flest gånger</h3>";                        
+            echo "<table>", "<thead>", "<tr>";
 
-        <p>Här kommer highscore-lista finnas.</p>
+            // Visa tabellrader
+            echo "<th>Rank</th>";
+            echo "<th>Quiz</th>";
+            echo "<th>Skapare</th>";
+            echo "<th>Antal</th>";
+            
+            // Avslut tabellrad
+            echo "</tr>"; "</thead>";
+            
+            $rank = 1;
+            // loop för att hämta en rad i taget
+            while($row = $data->fetch_assoc()){                               
+                echo "<tbody>", "<tr>";
+                echo "<td><i>", $rank, "</i></td>";
+                echo "<td><b>", $row["header"], "</b> ", $row["header2"], "</td>";
+                echo "<td>", $row["author"], "</td>";
+                echo "<td>", $row["run"], "</td>";
+                echo "</tr>";
+                $rank = $rank + 1;
+                    
+            }
+            // Avslut tabell
+            echo "</tbody>", "</table>";
+
+            echo "<br><br>";
+
+    ?>
 
     </main>
 
