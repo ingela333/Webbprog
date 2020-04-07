@@ -2,6 +2,21 @@
     $title = "Quizmani - skapa quiz";
     $menuItem = 2;
     include "header.php";
+
+    $server = "localhost"; // ansluta till server, vår dator
+    $username = "ingela333";  
+    $password = "phpmyadmin,01"; 
+    $db = "ingela333"; 
+
+    // skapa kontakt med databas
+    $link = new mysqli($server, $username, $password, $db);
+
+    // testa kontakten - om det finns något fel: skriv ut felet
+    if ($link->connect_error){
+        echo $link->connect_error;
+        exit;
+    }
+    // kommer man hit i koden så fungerar databaskontakten! 
 ?>
 
     <div id="page" class="container">
@@ -211,11 +226,21 @@
 
             <p>
 
-                <ul style="list-style-image: url(images/q5.png)">
-                    <li>Lorem, ipsum?</li>
-                    <li>Dolor sit amet?</li>
-                    <li>Consectetur adipisicing?</li>
-                </ul>
+               <?php
+                // Hämta tabell quiz_head sorterat på skapandedatum
+                $sql = "SELECT * FROM quiz_head ORDER BY created DESC";
+                $data = $link->query($sql);
+            
+                echo "<ul style='list-style-image: url(images/q5.png)'>";
+
+                $i = 1;
+                // loop för att hämta en rad i taget
+                while($row = $data->fetch_assoc() and $i<=10){                               
+                    echo "<li><b>", $row["header"], "</b> ", $row["header2"], "</li><br>";
+                    $i += 1;
+                }
+                echo "</ul>";
+            ?>
 
             </p>
 

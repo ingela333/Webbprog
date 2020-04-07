@@ -16,7 +16,7 @@
         echo $link->connect_error;
         exit;
     }
-    // kommer ni hit i koden så fungerar databaskontakten!    
+    // kommer man hit i koden så fungerar databaskontakten!    
 ?>
 
 <div id="page" class="container">
@@ -37,18 +37,16 @@
             echo "<h3>Quiz som har testats flest gånger</h3>";                        
             echo "<table>", "<thead>", "<tr>";
 
-            // Visa tabellrader
+            // Visa tabellraders rubriker
             echo "<th>Rank</th>";
             echo "<th>Quiz</th>";
             echo "<th>Skapare</th>";
             echo "<th>Antal</th>";
-            
-            // Avslut tabellrad
-            echo "</tr>"; "</thead>";
+            echo "</tr>"; "</thead>"; // Avslut tabellrad
             
             $rank = 1;
             // loop för att hämta en rad i taget
-            while($row = $data->fetch_assoc()){                               
+            while($row = $data->fetch_assoc() and $rank<=50){                               
                 echo "<tbody>", "<tr>";
                 echo "<td><i>", $rank, "</i></td>";
                 echo "<td><b>", $row["header"], "</b> ", $row["header2"], "</td>";
@@ -63,7 +61,7 @@
 
             echo "<br><br>";
 
-    ?>
+        ?>
 
     </main>
 

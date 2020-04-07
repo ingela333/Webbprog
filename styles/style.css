@@ -187,21 +187,22 @@ h1 {
 h2 {
     color: darkblue;
     text-shadow: 2px 2px 5px aquamarine;
-    font-size: 25px;
-    margin: 10px;
+    font-size: 2.3em;
+    margin: 20px 0 0 10px;
     font-family: 'Marck Script', cursive;
-    font-size: 2em
 }
 
 h3 {
     color: blue;
     font-size: 1.8em;
+    margin-left: 40px;
     font-family: 'Marck Script', cursive;
 }
 
 h4 {
     color: blue;
     font-size: 1.6em;
+    margin: 10px;
     font-family: 'Caveat Brush', cursive;
 }
 
@@ -213,6 +214,15 @@ h4.aside {
 h4.aside_gallery {
     border: darkblue;
     border-style: solid
+}
+
+h5 {
+    color: darkblue;
+    text-shadow: 2px 2px 5px aquamarine;
+    font-size: 1.8em;
+    margin: 10px;
+    font-family: 'Marck Script', cursive;
+    font-weight: bold;
 }
 
 p {
