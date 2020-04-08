@@ -49,21 +49,21 @@
             while($row = $data->fetch_assoc()){
                 switch ($i) {
                     case 1:
-                $question1 = $row["question1"];
-                $answer1_1 = $row["answer1_1"];
-                $answer1_2 = $row["answer1_2"];
-                $answer1_3 = $row["answer1_3"];
+                        $question1 = $row["question1"];
+                        $answer1_1 = $row["answer1_1"];
+                        $answer1_2 = $row["answer1_2"];
+                        $answer1_3 = $row["answer1_3"];
                     case 2:
-                $question2 = $row["question2"];
-                $answer2_1 = $row["answer2_1"];
-                $answer2_2 = $row["answer2_2"];
-                $answer2_3 = $row["answer2_3"];
+                        $question2 = $row["question2"];
+                        $answer2_1 = $row["answer2_1"];
+                        $answer2_2 = $row["answer2_2"];
+                        $answer2_3 = $row["answer2_3"];
                     case 3:
-                $question3 = $row["question3"];
-                $answer3_1 = $row["answer3_1"];
-                $answer3_2 = $row["answer3_2"];
-                $answer3_3 = $row["answer3_3"];
-                }
+                        $question3 = $row["question3"];
+                        $answer3_1 = $row["answer3_1"];
+                        $answer3_2 = $row["answer3_2"];
+                        $answer3_3 = $row["answer3_3"];
+                    }
 
                 $i = $i + 1;
                    
@@ -201,8 +201,8 @@
             <p>
 
             <?php
-                // Hämta tabell quiz_head sorterat på skapandedatum
-                $sql = "SELECT * FROM quiz_head ORDER BY created DESC";
+                // Hämta tabell quiz sorterat på id
+                $sql = "SELECT * FROM quiz ORDER BY id DESC";
                 $data = $link->query($sql);
             
                 echo "<ul style='list-style-image: url(images/q5.png)'>";
