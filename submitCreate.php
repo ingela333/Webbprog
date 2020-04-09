@@ -12,7 +12,7 @@
         return $data;
     }
 
-    // Variabler för quiz_head  (sök UPD)
+    // Variabler för quiz (tidigare quiz_head)  (sök UPD)
     $author = validate_data($_POST["author"]);
     $header = validate_data($_POST["header"]);
     $header2 = validate_data($_POST["header2"]);
@@ -21,7 +21,7 @@
     $result2 = validate_data($_POST["result2"]);
     $result3 = validate_data($_POST["result3"]);
 
-    // Variabler för quiz_question
+    // Variabler för quiz (tidigare quiz_question)
     //$id = validate_data($_POST["id"]);
     $question1 = validate_data($_POST["question1"]);
     $answer1_1 = validate_data($_POST["answer1_1"]);

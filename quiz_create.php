@@ -218,71 +218,69 @@
 
             <script>
  
-        // Skicka asynkront när sidan redan är laddad!
-        function sendAjax(event){ // ta emot eventet Submit, annars skickas form som vanligt
-            event.preventDefault(); // så ta bort default att skicka vid submit
+                // Skicka asynkront när sidan redan är laddad!
+                function sendAjax(event){ // ta emot eventet Submit, annars skickas form som vanligt
+                    event.preventDefault(); // så ta bort default att skicka vid submit
                
-        // skapa data att skicka (sök UPD)
-        var formData = new FormData();
+                    // skapa data att skicka (sök UPD)
+                    var formData = new FormData();
 
-        // data till tabell quiz_questions    
-        formData.append("author", document.getElementById("author").value); 
-        formData.append("header", document.getElementById("header").value); 
-        formData.append("header2", document.getElementById("header2").value); 
-        formData.append("category", document.getElementById("category").value); 
-        formData.append("result1", document.getElementById("result1").value); 
-        formData.append("result2", document.getElementById("result2").value); 
-        formData.append("result3", document.getElementById("result3").value); 
+                    // data till tabell quiz (tidigare quiz_head)
+                    formData.append("author", document.getElementById("author").value); 
+                    formData.append("header", document.getElementById("header").value); 
+                    formData.append("header2", document.getElementById("header2").value); 
+                    formData.append("category", document.getElementById("category").value); 
+                    formData.append("result1", document.getElementById("result1").value); 
+                    formData.append("result2", document.getElementById("result2").value); 
+                    formData.append("result3", document.getElementById("result3").value); 
 
-        // data till tabell quiz_questions    
-        formData.append("question1", document.getElementById("question1").value); 
-        formData.append("answer1_1", document.getElementById("answer1_1").value); 
-        formData.append("points1_1", document.getElementById("points1_1").value); 
-        formData.append("answer1_2", document.getElementById("answer1_2").value); 
-        formData.append("points1_2", document.getElementById("points1_2").value); 
-        formData.append("answer1_3", document.getElementById("answer1_3").value); 
-        formData.append("points1_3", document.getElementById("points1_3").value); 
-        formData.append("question2", document.getElementById("question2").value); 
-        formData.append("answer2_1", document.getElementById("answer2_1").value); 
-        formData.append("points2_1", document.getElementById("points2_1").value); 
-        formData.append("answer2_2", document.getElementById("answer2_2").value); 
-        formData.append("points2_2", document.getElementById("points2_2").value); 
-        formData.append("answer2_3", document.getElementById("answer2_3").value); 
-        formData.append("points2_3", document.getElementById("points2_3").value); 
-        formData.append("question3", document.getElementById("question3").value); 
-        formData.append("answer3_1", document.getElementById("answer3_1").value); 
-        formData.append("points3_1", document.getElementById("points3_1").value); 
-        formData.append("answer3_2", document.getElementById("answer3_2").value); 
-        formData.append("points3_2", document.getElementById("points3_2").value); 
-        formData.append("answer3_3", document.getElementById("answer3_3").value); 
-        formData.append("points3_3", document.getElementById("points3_3").value); 
+                    // data till tabell quiz (tidigare quiz_questions)
+                    formData.append("question1", document.getElementById("question1").value); 
+                    formData.append("answer1_1", document.getElementById("answer1_1").value); 
+                    formData.append("points1_1", document.getElementById("points1_1").value); 
+                    formData.append("answer1_2", document.getElementById("answer1_2").value); 
+                    formData.append("points1_2", document.getElementById("points1_2").value); 
+                    formData.append("answer1_3", document.getElementById("answer1_3").value); 
+                    formData.append("points1_3", document.getElementById("points1_3").value); 
+                    formData.append("question2", document.getElementById("question2").value); 
+                    formData.append("answer2_1", document.getElementById("answer2_1").value); 
+                    formData.append("points2_1", document.getElementById("points2_1").value); 
+                    formData.append("answer2_2", document.getElementById("answer2_2").value); 
+                    formData.append("points2_2", document.getElementById("points2_2").value); 
+                    formData.append("answer2_3", document.getElementById("answer2_3").value); 
+                    formData.append("points2_3", document.getElementById("points2_3").value); 
+                    formData.append("question3", document.getElementById("question3").value); 
+                    formData.append("answer3_1", document.getElementById("answer3_1").value); 
+                    formData.append("points3_1", document.getElementById("points3_1").value); 
+                    formData.append("answer3_2", document.getElementById("answer3_2").value); 
+                    formData.append("points3_2", document.getElementById("points3_2").value); 
+                    formData.append("answer3_3", document.getElementById("answer3_3").value); 
+                    formData.append("points3_3", document.getElementById("points3_3").value); 
 
-        // AJAX - skapa objekt XML/http request för att kunna hämta data gm objektet efter att sidan är laddad
-        var xhttp = new XMLHttpRequest();
+                    // AJAX - skapa objekt XML/http request för att kunna hämta data gm objektet efter att sidan är laddad
+                    var xhttp = new XMLHttpRequest();
 
-        // lyssningsfunktion onreadystatechange när något ska skickas/ta emot
-        xhttp.onreadystatechange = function () {
+                    // lyssningsfunktion onreadystatechange när något ska skickas/ta emot
+                    xhttp.onreadystatechange = function () {
+                        // vilken förändring har skett? (1=initiering, 2=kontakt med server, 3=processing, 4=fått svar)
+                        // kolla också status 200 för att allt är ok (403 forbidden, 404 sidan finns ej)
+                        if (this.readyState == 4 && this.status == 200) {
+                            // Här läggs allt som ska göras när man hämtat objektet!!! Samma som i
+                            document.getElementById("result").innerHTML = this.responseText;
+                        }
+                    };
 
-            // vilken förändring har skett? (1=initiering, 2=kontakt med server, 3=processing, 4=fått svar)
-            // kolla också status 200 för att allt är ok (403 forbidden, 404 sidan finns ej)
-            if (this.readyState == 4 && this.status == 200) {
-            // Här läggs allt som ska göras när man hämtat objektet!!! Samma som i
-            document.getElementById("result").innerHTML = this.responseText;
-            }
-        };
-        // göra ett anrop till xhttp 
-        // hämta data från annan sida med GET, 
-        // url adress var vi ska hämta ifrån,
-        // asynkront eller inte - true (sidan fryser inte och väntar på svar, kan göra annat medan)
-        xhttp.open("POST", "http://localhost/php/submitCreate.php");
-        xhttp.send(formData); // skickar iväg förfrågan
-
-        }
+                    // göra ett anrop till xhttp 
+                    // hämta data från annan sida med GET, 
+                    // url adress var vi ska hämta ifrån,
+                    // asynkront eller inte - true (sidan fryser inte och väntar på svar, kan göra annat medan)
+                    xhttp.open("POST", "http://localhost/php/submitCreate.php");
+                    xhttp.send(formData); // skickar iväg förfrågan
+                }
         
-        document.getElementById("formCreate").addEventListener('submit', sendAjax);
+                document.getElementById("formCreate").addEventListener('submit', sendAjax);
               
-    </script>
-
+            </script>
 
         </main>
 
