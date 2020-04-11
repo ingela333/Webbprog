@@ -2,11 +2,11 @@
 
 // ta emot värdena
 // echo "hej";
-echo $_POST["qid"];
-echo $_POST["run"];
-echo $_POST["r1"]; //r1a
-echo $_POST["r2"]; //r2b
-echo $_POST["r3"], "<br>"; //r3c
+// echo $_POST["qid"];
+// echo $_POST["run"];
+// echo $_POST["r1"]; //r1a
+// echo $_POST["r2"]; //r2b
+// echo $_POST["r3"], "<br>"; //r3c
 
 $qid = $_POST["qid"];
 $run = $_POST["run"];
@@ -36,8 +36,10 @@ if ($link->connect_error){
 
 
 
-// hämta poäng för de olika svaren
-// hämta en specifik post ur databasen
+//// Räkna ut resultat för de olika svaren
+
+/// hämta en specifik post ur databasen
+
 // formulera SQL-frågan
 $sql = "SELECT * FROM quiz WHERE ID = $qid"; //112
 // kör frågan
@@ -46,62 +48,100 @@ $data = $link->query($sql);
 $row = $data->fetch_assoc();
             
 // spara värden    
-$points1_1 = $row["points1_1"];
-$points1_2 = $row["points1_2"];
-$points1_3 = $row["points1_3"];
-$points2_1 = $row["points2_1"];
-$points2_2 = $row["points2_2"];
-$points2_3 = $row["points2_3"];
-$points3_1 = $row["points3_1"];
-$points3_2 = $row["points3_2"];
-$points3_3 = $row["points3_3"];
+$points1a = $row["points1a"];
+$points1b = $row["points1b"];
+$points1c = $row["points1c"];
+$points2a = $row["points2a"];
+$points2b = $row["points2b"];
+$points2c = $row["points2c"];
+$points3a = $row["points3a"];
+$points3b = $row["points3b"];
+$points3c = $row["points3c"];
 $result1 = $row["result1"];
 $result2 = $row["result2"];
 $result3 = $row["result3"];
 $run = $row["run"];
 
 
-// Räkna ut vilket testresultat som ska visas
-// alla poäng totalt
-$points_tot = $points1_1 + $points1_2 + $points1_3 + $points2_1 + $points2_2 +
-$points2_3 + $points3_1 + $points3_2 + $points3_3;
+/// Räkna ut vilket testresultat som ska visas
 
-echo $points_tot;
-/*
+// högsta poäng för varje fråga
+$high1 = max($points1a, $points1b, $points1c);
+$high2 = max($points2a, $points2b, $points2c);
+$high3 = max($points3a, $points3b, $points3c);
+
+// räkna förhållandet mellan poängen och högsta poäng för varje fråga
+// fråga 1
 $points = 0;
-// räkna ihop de 3 poängen
-    if ($r1 = 'a') {
-        $points += $points1_1; // 5
-     } elseif ($r1 = 'b') {
-        $points += $points1_2; // 0
-     } elseif ($r1 = 'c') {
-        $points += $points1_3; // 9
-    }
 
-    echo $points;
+switch ($r1) {
+    case 'r1a':
+        $ratio1 = $points1a / $high1; // 5/9
+        //echo $points;
+    break;   
 
-    if ($r1a = 'a') {
-        $points += $points2_1;
-    }
-    if ($r1b = 'b') {
-        $points += $points2_2;
-    }
-    if ($r1c = 'c') {
-        $points += $points2_3;
-    }
-    if ($r1a = 'a') {
-        $points += $points3_1;
-    }
-    if ($r1b = 'b') {
-        $points += $points3_2;
-    }
-    if ($r1c = 'c') {
-        $points += $points3_3;
-    } */
+    case 'r1b':
+        $ratio1 = $points1b / $high1; // 0/9
+    break;   
 
+    case 'r1c':
+        $ratio1 = $points1c / $high1; // 9/9
+    break;   
+}
 
-// vilken procent för att få fram rätt testresultat att visa (0-33, 34-67, 68-100%)
- $resultx = $row["result1"];
+// fråga 2
+$points = 0;
+
+switch ($r2) {
+    case 'r2a':
+        $ratio2 = $points2a / $high2; // 5/9
+        //echo $points;
+    break;   
+ 
+    case 'r2b':
+        $ratio2 = $points2b / $high2; // 9/9
+    break;   
+
+    case 'r2c':
+        $ratio2 = $points2c / $high2; // 0/9
+    break;   
+}
+
+// fråga 3
+$points = 0;
+
+switch ($r3) {
+    case 'r3a':
+        $ratio3 = $points3a / $high3; // 3/7
+        //echo $points;
+    break;   
+
+    case 'r3b':
+        $ratio3 = $points3b / $high3; // 7/7
+    break;   
+
+    case 'r3c':
+        $ratio3 = $points3c / $high3; // 5/7
+    break;   
+}
+
+// alla frågors totala förhållandet av alla poäng
+$ratio = ($ratio1 + $ratio2 + $ratio3) / 3;
+
+// visa testresultat beroende på totala förhållande (proc: 0-33, 34-67, 68-100%)
+
+if ($ratio<=0.33) {
+    $resultx = $row["result1"];   
+
+} else if ($ratio<=0.67) {
+    $resultx = $row["result2"];   
+
+} else {
+    $resultx = $row["result3"];   
+   
+}
+
+   
 
 
     //// Uppdatering av databasen

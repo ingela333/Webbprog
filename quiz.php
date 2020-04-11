@@ -31,7 +31,7 @@
         <?php
             // hämta en specifik post ur databasen
             // formulera SQL-frågan
-            $sql = "SELECT * FROM quiz WHERE ID = 112";
+            $sql = "SELECT * FROM quiz WHERE ID = 1";
             // kör frågan
             $data = $link->query($sql);
             // hämta en rad ur svarsdatan - en array med kolumnnamn
@@ -43,17 +43,17 @@
             $header = $row["header"];
             $header2 = $row["header2"]; 
             $question1 = $row["question1"];
-            $answer1_1 = $row["answer1_1"];
-            $answer1_2 = $row["answer1_2"];
-            $answer1_3 = $row["answer1_3"];
+            $answer1a = $row["answer1a"];
+            $answer1b = $row["answer1b"];
+            $answer1c = $row["answer1c"];
             $question2 = $row["question2"];
-            $answer2_1 = $row["answer2_1"];
-            $answer2_2 = $row["answer2_2"];
-            $answer2_3 = $row["answer2_3"];
+            $answer2a = $row["answer2a"];
+            $answer2b = $row["answer2b"];
+            $answer2c = $row["answer2c"];
             $question3 = $row["question3"];
-            $answer3_1 = $row["answer3_1"];
-            $answer3_2 = $row["answer3_2"];
-            $answer3_3 = $row["answer3_3"];
+            $answer3a = $row["answer3a"];
+            $answer3b = $row["answer3b"];
+            $answer3c = $row["answer3c"];
 
             // vid submit - variabler som ska skickas till submitRun.php via Ajax
             $qid = $row["ID"];
@@ -77,20 +77,17 @@
             <!-- Question 1 -->
                 
                 <?php echo "<h5> 1. ", $question1,"</h5><br>"; ?>
-                
-                <!-- <label id="quizid"> </label> -->
-                    <?php // echo "<h5> 1. ", $question1,"</h5><br>"; ?> 
 
                 <label>
-                    <input type="radio" name="radio1" value="r1a" id="r1a"><?php echo $answer1_1; ?>
+                    <input type="radio" name="radio1" value="r1a" id="r1a" required><?php echo $answer1a; ?>
                 </label><br>
 
                 <label>
-                    <input type="radio" name="radio1" value="r1b" id="r1b"><?php echo $answer1_2; ?>
+                    <input type="radio" name="radio1" value="r1b" id="r1b"><?php echo $answer1b; ?>
                 </label><br>
 
                 <label>
-                    <input type="radio" name="radio1" value="r1c" id="r1c"><?php echo $answer1_3; ?>
+                    <input type="radio" name="radio1" value="r1c" id="r1c"><?php echo $answer1c; ?>
                 </label><br><br>
 
             
@@ -100,15 +97,15 @@
                 <?php echo "<h5> 2. ", $question2,"</h5><br>"; ?>
 
                 <label>
-                    <input type="radio" name="radio2" value="r2a" id="r2a"><?php echo $answer2_1; ?>
+                    <input type="radio" name="radio2" value="r2a" id="r2a" required><?php echo $answer2a; ?>
                 </label><br>
 
                 <label>
-                    <input type="radio" name="radio2" value="r2b" id="r2b"><?php echo $answer2_2; ?>
+                    <input type="radio" name="radio2" value="r2b" id="r2b"><?php echo $answer2b; ?>
                 </label><br>
 
                 <label>
-                    <input type="radio" name="radio2" value="r2c" id="r2c"><?php echo $answer2_3; ?>
+                    <input type="radio" name="radio2" value="r2c" id="r2c"><?php echo $answer2c; ?>
                 </label><br><br>
 
 
@@ -118,15 +115,15 @@
                 <?php echo "<h5> 3. ", $question3,"</h5><br>"; ?>
 
                 <label>
-                    <input type="radio" name="radio3" value="r3a" id="r3a"><?php echo $answer3_1; ?>
+                    <input type="radio" name="radio3" value="r3a" id="r3a" required><?php echo $answer3a; ?>
                 </label><br>
 
                 <label>
-                    <input type="radio" name="radio3" value="r3b" id="r3b"><?php echo $answer3_2; ?>
+                    <input type="radio" name="radio3" value="r3b" id="r3b"><?php echo $answer3b; ?>
                 </label><br>
 
                 <label>
-                    <input type="radio" name="radio3" value="r3c" id="r3c"><?php echo $answer3_3; ?>
+                    <input type="radio" name="radio3" value="r3c" id="r3c"><?php echo $answer3c; ?>
                 </label><br><br>
 
 
@@ -145,7 +142,6 @@
             </form>
 
             <script>
-
 
                 // Skicka asynkront när sidan redan är laddad!
                 function sendAjax(event){ // ta emot eventet Submit, annars skickas form som vanligt
@@ -212,19 +208,7 @@
             <p>
 
             <?php
-                // Hämta tabell quiz sorterat på id
-                $sql = "SELECT * FROM quiz ORDER BY id DESC";
-                $data = $link->query($sql);
-            
-                echo "<ul style='list-style-image: url(images/q5.png)'>";
-
-                $i = 1;
-                // loop för att hämta en rad i taget
-                while($row = $data->fetch_assoc() and $i<=10){                               
-                    echo "<li><b>", $row["header"], "</b> ", $row["header2"], "</li><br>";
-                    $i += 1;
-                }
-                echo "</ul>";
+                include "aside.php";
             ?>
 
             </p>

@@ -29,8 +29,8 @@
         </h1>
 
         <?php
-            // Hämta tabell quiz_head sorterat på antal gånger DESC
-            $sql = "SELECT * FROM quiz_head ORDER BY run DESC";
+            // Hämta tabell quiz sorterat på antal gånger DESC
+            $sql = "SELECT * FROM quiz ORDER BY run DESC";
             $data = $link->query($sql);
             
             // Visa rubrik

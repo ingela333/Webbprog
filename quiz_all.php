@@ -30,14 +30,16 @@
 
             <?php
                 // Hämta många poster sorterat på category
-                $sql = "SELECT * FROM quiz_head ORDER BY category, header";
+                $sql = "SELECT * FROM quiz ORDER BY category, header";
                 $data = $link->query($sql);
 
                 $cat = " ";
                 // loop för att hämta en rad i taget
                 while($row = $data->fetch_assoc()){
                     if($row["category"] !== $cat) {              
-                        echo "<h3>", $row["category"], "</h3>";  
+                        echo "<h4>", $row["category"], "</h4>";  
+                 //       <h1 style=”font-size: 3em; margin-top: 1em; color: darkgreen”>
+                 //           style="font-size: 3em"
                         $cat = $row["category"]; 
                     }
 

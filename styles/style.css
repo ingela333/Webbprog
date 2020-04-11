@@ -390,15 +390,15 @@ form p input#question {
     width: 580px;
 }
 
-form p input#answer1_1,
-form p input#answer1_2,
-form p input#answer1_3,
-form p input#answer2_1,
-form p input#answer2_2,
-form p input#answer2_3,
-form p input#answer3_1,
-form p input#answer3_2,
-form p input#answer3_3 {
+form p input#answer1a,
+form p input#answer1b,
+form p input#answer1c,
+form p input#answer2a,
+form p input#answer2b,
+form p input#answer2c,
+form p input#answer3a,
+form p input#answer3b,
+form p input#answer3c {
     margin: 0 0 10px 20px;
     width: 560px;
 }

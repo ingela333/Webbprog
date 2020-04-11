@@ -38,7 +38,7 @@
                         minlength="4" maxlength="256"><br>
 
                     <input type="text" id="header2" name="header2" placeholder="Fyll i en underrubrik (frivilligt)"
-                        required minlength="4" maxlength="256">
+                        minlength="4" maxlength="256">
                 </p>
 
                 <p>
@@ -60,27 +60,27 @@
 
                 <p>
                     <label for="text">a.</label>
-                    <input type="text" id="answer1_1" name="answer1_1" placeholder="Svar 1" required minlength="1"
+                    <input type="text" id="answer1a" name="answer1a" placeholder="Svar 1" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points1_1" id="points1_1" required min="0" max="9">
+                    <input type="number" name="points1a" id="points1a" required min="0" max="9">
                     <br>
 
                     <label for="text">b.</label>
-                    <input type="text" id="answer1_2" name="answer1_2" placeholder="Svar 2" required minlength="1"
+                    <input type="text" id="answer1b" name="answer1b" placeholder="Svar 2" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points1_2" id="points1_2" required min="0" max="9">
+                    <input type="number" name="points1b" id="points1b" required min="0" max="9">
                     <br>
 
                     <label for="text">c.</label>
-                    <input type="text" id="answer1_3" name="answer1_3" placeholder="Svar 3" required minlength="1"
+                    <input type="text" id="answer1c" name="answer1c" placeholder="Svar 3" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points1_3" id="points1_3" required min="0" max="9">
+                    <input type="number" name="points1c" id="points1c" required min="0" max="9">
                     <br>
                 </p>
 
@@ -96,27 +96,27 @@
 
                 <p>
                     <label for="text">a.</label>
-                    <input type="text" id="answer2_1" name="answer2_1" placeholder="Svar 1"  minlength="1"
+                    <input type="text" id="answer2a" name="answer2a" placeholder="Svar 1"  minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points2_1" id="points2_1"  min="0" max="9">
+                    <input type="number" name="points2a" id="points2a"  min="0" max="9">
                     <br>
 
                     <label for="text">b.</label>
-                    <input type="text" id="answer2_2" name="answer2_2" placeholder="Svar 2" minlength="1"
+                    <input type="text" id="answer2b" name="answer2b" placeholder="Svar 2" minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points2_2" id="points2_2"  min="0" max="9">
+                    <input type="number" name="points2b" id="points2b"  min="0" max="9">
                     <br>
 
                     <label for="text">c.</label>
-                    <input type="text" id="answer2_3" name="answer2_3" placeholder="Svar 3"  minlength="1"
+                    <input type="text" id="answer2c" name="answer2c" placeholder="Svar 3"  minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points2_3" id="points2_3" min="0" max="9">
+                    <input type="number" name="points2c" id="points2c" min="0" max="9">
                     <br>
 
                 </p>
@@ -133,27 +133,27 @@
 
                 <p>
                     <label for="text">a.</label>
-                    <input type="text" id="answer3_1" name="answer3_1" placeholder="Svar 1" minlength="1"
+                    <input type="text" id="answer3a" name="answer3a" placeholder="Svar 1" minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points3_1" id="points3_1" min="0" max="9">
+                    <input type="number" name="points3a" id="points3a" min="0" max="9">
                     <br>
 
                     <label for="text">b.</label>
-                    <input type="text" id="answer3_2" name="answer3_2" placeholder="Svar 2" minlength="1"
+                    <input type="text" id="answer3b" name="answer3b" placeholder="Svar 2" minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points3_2" id="points3_2" min="0" max="9">
+                    <input type="number" name="points3b" id="points3b" min="0" max="9">
                     <br>
 
                     <label for="text">c.</label>
-                    <input type="text" id="answer3_3" name="answer3_3" placeholder="Svar 3" minlength="1"
+                    <input type="text" id="answer3c" name="answer3c" placeholder="Svar 3" minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points3_3" id="points3_3" min="0" max="9">
+                    <input type="number" name="points3c" id="points3c" min="0" max="9">
                     <br>
 
                 </p>
@@ -161,14 +161,14 @@
                 <!-- Category - value skickas i formuläret -->
 
                 <p>
-                    <select name="category" id="category">
-                        <option value="category"> - Välj kategori - </option>
-                        <option value="cat1">Personligt</option>
-                        <option value="cat2">Underhållning</option>
-                        <option value="cat3">Naturvetenskap</option>
-                        <option value="cat4">Samhälle</option>
-                        <option value="cat5">Humor</option>
-                        <option value="cat6">Övrigt</option>
+                    <select name="category" id="category" required>
+                        <option value="Övrigt"> - Välj kategori - </option>
+                        <option value="Personligt">Personligt</option>
+                        <option value="Underhållning">Underhållning</option>
+                        <option value="Naturvetenskap">Naturvetenskap</option>
+                        <option value="Samhälle">Samhälle</option>
+                        <option value="Humor">Humor</option>
+                        <option value="Övrigt">Övrigt</option>
                     </select>
                 </p>
               
@@ -217,7 +217,7 @@
             </form>
 
             <script>
- 
+                
                 // Skicka asynkront när sidan redan är laddad!
                 function sendAjax(event){ // ta emot eventet Submit, annars skickas form som vanligt
                     event.preventDefault(); // så ta bort default att skicka vid submit
@@ -236,26 +236,26 @@
 
                     // data till tabell quiz (tidigare quiz_questions)
                     formData.append("question1", document.getElementById("question1").value); 
-                    formData.append("answer1_1", document.getElementById("answer1_1").value); 
-                    formData.append("points1_1", document.getElementById("points1_1").value); 
-                    formData.append("answer1_2", document.getElementById("answer1_2").value); 
-                    formData.append("points1_2", document.getElementById("points1_2").value); 
-                    formData.append("answer1_3", document.getElementById("answer1_3").value); 
-                    formData.append("points1_3", document.getElementById("points1_3").value); 
+                    formData.append("answer1a", document.getElementById("answer1a").value); 
+                    formData.append("points1a", document.getElementById("points1a").value); 
+                    formData.append("answer1b", document.getElementById("answer1b").value); 
+                    formData.append("points1b", document.getElementById("points1b").value); 
+                    formData.append("answer1c", document.getElementById("answer1c").value); 
+                    formData.append("points1c", document.getElementById("points1c").value); 
                     formData.append("question2", document.getElementById("question2").value); 
-                    formData.append("answer2_1", document.getElementById("answer2_1").value); 
-                    formData.append("points2_1", document.getElementById("points2_1").value); 
-                    formData.append("answer2_2", document.getElementById("answer2_2").value); 
-                    formData.append("points2_2", document.getElementById("points2_2").value); 
-                    formData.append("answer2_3", document.getElementById("answer2_3").value); 
-                    formData.append("points2_3", document.getElementById("points2_3").value); 
+                    formData.append("answer2a", document.getElementById("answer2a").value); 
+                    formData.append("points2a", document.getElementById("points2a").value); 
+                    formData.append("answer2b", document.getElementById("answer2b").value); 
+                    formData.append("points2b", document.getElementById("points2b").value); 
+                    formData.append("answer2c", document.getElementById("answer2c").value); 
+                    formData.append("points2c", document.getElementById("points2c").value); 
                     formData.append("question3", document.getElementById("question3").value); 
-                    formData.append("answer3_1", document.getElementById("answer3_1").value); 
-                    formData.append("points3_1", document.getElementById("points3_1").value); 
-                    formData.append("answer3_2", document.getElementById("answer3_2").value); 
-                    formData.append("points3_2", document.getElementById("points3_2").value); 
-                    formData.append("answer3_3", document.getElementById("answer3_3").value); 
-                    formData.append("points3_3", document.getElementById("points3_3").value); 
+                    formData.append("answer3a", document.getElementById("answer3a").value); 
+                    formData.append("points3a", document.getElementById("points3a").value); 
+                    formData.append("answer3b", document.getElementById("answer3b").value); 
+                    formData.append("points3b", document.getElementById("points3b").value); 
+                    formData.append("answer3c", document.getElementById("answer3c").value); 
+                    formData.append("points3c", document.getElementById("points3c").value); 
 
                     // AJAX - skapa objekt XML/http request för att kunna hämta data gm objektet efter att sidan är laddad
                     var xhttp = new XMLHttpRequest();
@@ -277,7 +277,7 @@
                     xhttp.open("POST", "http://localhost/php/submitCreate.php");
                     xhttp.send(formData); // skickar iväg förfrågan
                 }
-        
+
                 document.getElementById("formCreate").addEventListener('submit', sendAjax);
               
             </script>
@@ -291,20 +291,8 @@
 
             <p>
 
-               <?php
-                // Hämta tabell quiz sorterat på id
-                $sql = "SELECT * FROM quiz ORDER BY id DESC";
-                $data = $link->query($sql);
-            
-                echo "<ul style='list-style-image: url(images/q5.png)'>";
-
-                $i = 1;
-                // loop för att hämta en rad i taget
-                while($row = $data->fetch_assoc() and $i<=10){                               
-                    echo "<li><b>", $row["header"], "</b> ", $row["header2"], "</li><br>";
-                    $i += 1;
-                }
-                echo "</ul>";
+            <?php
+               include "aside.php";
             ?>
 
             </p>
@@ -321,29 +309,7 @@
                 // Här läggs allt som ska göras när man hämtat objektet!!! Samma som i
                   //  document.getElementById("result").innerHTML = this.responseText;
                   //  event.load();
-                    /*
-
-                    
-            <?php
             /*
-                // Hämta tabell quiz sorterat på id
-                $sql = "SELECT * FROM quiz ORDER BY id DESC";
-                $data = $link->query($sql);
-            
-                echo "<ul style='list-style-image: url(images/q5.png)'>";
-
-                $i = 1;
-                // loop för att hämta en rad i taget
-                while($row = $data->fetch_assoc() and $i<=10){                               
-                    echo "<li><b>", $row["header"], "</b> ", $row["header2"], "</li><br>";
-                    $i += 1;
-                }
-                echo "</ul>";*/
-            ?>
-            /*
-                }
-            };
-            */
             </script>
 
         </aside>
