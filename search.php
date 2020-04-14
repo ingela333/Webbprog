@@ -1,6 +1,6 @@
 <?php
-    $title = "Quizmani";
-    $menuItem = 0;
+    $title = "Sök quiz";
+    $menuItem = 9;
     include "header.php";
 
     $server = "localhost"; // ansluta till server, vår dator
@@ -25,10 +25,8 @@
         <!-- Main - Välkommen -->
 
         <h1>
-            Välkommen till Quizmani!
+            Sök quiz!
         </h1>
-
-        <h4>Här kan du skapa egna quiz eller svara på andras quiz.</h4><br><br>
 
             <!-- Form  (sök UPD) -->
         <form action="submitSearch.php" method="POST" id="formSearch">

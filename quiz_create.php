@@ -163,11 +163,13 @@
                 <p>
                     <select name="category" id="category" required>
                         <option value="Övrigt"> - Välj kategori - </option>
-                        <option value="Personligt">Personligt</option>
                         <option value="Underhållning">Underhållning</option>
-                        <option value="Naturvetenskap">Naturvetenskap</option>
-                        <option value="Samhälle">Samhälle</option>
                         <option value="Humor">Humor</option>
+                        <option value="Personligt">Personligt</option>
+                        <option value="Språk">Språk</option>
+                        <option value="Samhällsorientering">Samhällsorientering</option>
+                        <option value="Naturorientering">Naturorientering</option>
+                        <option value="Matematik och Programmering">Matematik och Programmering</option>
                         <option value="Övrigt">Övrigt</option>
                     </select>
                 </p>
@@ -256,6 +258,8 @@
                     formData.append("points3b", document.getElementById("points3b").value); 
                     formData.append("answer3c", document.getElementById("answer3c").value); 
                     formData.append("points3c", document.getElementById("points3c").value); 
+
+                    document.getElementById('formCreate').reset();
 
                     // AJAX - skapa objekt XML/http request för att kunna hämta data gm objektet efter att sidan är laddad
                     var xhttp = new XMLHttpRequest();

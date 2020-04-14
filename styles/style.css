@@ -186,7 +186,7 @@ h1 {
 
 h2 {
     color: darkblue;
-    text-shadow: 2px 2px 5px aquamarine;
+    text-shadow: 2px 2px 5px rgb(129, 179, 245);
     font-size: 2.3em;
     margin: 20px 0 0 10px;
     font-family: 'Marck Script', cursive;
@@ -247,9 +247,12 @@ blockquote.runes {
     color: brown
 }
 
+a {
+    text-decoration: none;
+}
+
 a:hover {
     color: blue;
-    text-decoration: underline
 }
 
 ul {
@@ -266,8 +269,9 @@ ol {
 b {
     color: darkslateblue;
     font-size: 1.1em;
-
 }
+
+
 
 i {
     color: blue;
@@ -354,7 +358,7 @@ select {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-input[type=submit] {
+input[type=submit], input[type=button] {
     border: 3px solid darkcyan;
     border-radius: 4px;
     width: 30%;
@@ -398,7 +402,8 @@ form p input#answer2b,
 form p input#answer2c,
 form p input#answer3a,
 form p input#answer3b,
-form p input#answer3c {
+form p input#answer3c,
+form p input#keyword {
     margin: 0 0 10px 20px;
     width: 560px;
 }

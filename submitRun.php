@@ -41,7 +41,7 @@ if ($link->connect_error){
 /// hämta en specifik post ur databasen
 
 // formulera SQL-frågan
-$sql = "SELECT * FROM quiz WHERE ID = $qid"; //112
+$sql = "SELECT * FROM quiz WHERE ID = $qid"; //1
 // kör frågan
 $data = $link->query($sql);
 // hämta en rad ur svarsdatan - en array med kolumnnamn
@@ -67,8 +67,11 @@ $run = $row["run"];
 
 // högsta poäng för varje fråga
 $high1 = max($points1a, $points1b, $points1c);
+$high1 += 0.1; // undvika division med 0
 $high2 = max($points2a, $points2b, $points2c);
+$high2 += 0.1; // undvika division med 0
 $high3 = max($points3a, $points3b, $points3c);
+$high3 += 0.1; // undvika division med 0
 
 // räkna förhållandet mellan poängen och högsta poäng för varje fråga
 // fråga 1
@@ -149,11 +152,34 @@ if ($ratio<=0.33) {
     $run += 1; // addera run med 1
 
     // Uppdatera en post i quiz med run - hur många gånger som testet är kört
-    $sql = "UPDATE quiz SET run = $run WHERE ID = 112";
+//  $sql = "UPDATE quiz SET run = $run WHERE ID = 1;
+    $sql = "UPDATE quiz SET run = $run WHERE ID = $qid";
     $link->query($sql);
 
 
     echo "<h4>Testresultat!</h4>";
-    echo "&nbsp;&nbsp;&nbsp;<b>", $resultx, "</b>";
+ //   echo "&nbsp;&nbsp;&nbsp;<b>", $resultx, "</b><br><br>";
+    echo "&nbsp;&nbsp;&nbsp;<h5>", $resultx, "</h5><br><br>";
+
+
+
+    //// Föreslå nya tester
+    echo "<h4>Köra nytt quiz?</h4>";
+
+    // Hämta många poster
+    $sql = "SELECT * FROM quiz ORDER BY RAND() LIMIT 1";
+    $data = $link->query($sql);
+    // loop för att hämta en rad i taget
+    while($row = $data->fetch_assoc()){
+        echo "<a href='quiz.php'>&nbsp;&nbsp;&nbsp;";
+        echo "<b>", $row["header"], "</b> ", $row["header2"], "</a><br>";
+        
+        $quizid = $row["ID"];
+
+        // spara quizid för att använda i quiz.php
+        session_start();
+        $_SESSION["quizid"] = $quizid;
+    }
+    echo "<br><br>";
 
 ?>

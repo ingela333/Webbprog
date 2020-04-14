@@ -29,9 +29,31 @@
         </h1>
 
         <?php
-            // hämta en specifik post ur databasen
-            // formulera SQL-frågan
-            $sql = "SELECT * FROM quiz WHERE ID = 1";
+            // hämta sparad quizid från submitRun.php
+            session_start();
+
+            // Kolla om något id är skickat med "a href" från submitSearch.php
+            if(isset($_GET["id"])) {
+                // echo "1 ", $_GET['id'];
+                $quizid = $_GET['id']; // hämta ID från a href submitSearch.php
+                // hämta en specifik post ur databasen
+                $sql = "SELECT * FROM quiz WHERE ID = $quizid";
+
+            // Annars: kolla om något id är skickat som variabel från submitRun.php
+            } else if (isset($_SESSION["quizid"])) {
+                // echo "2 ";
+                $quizid = $_SESSION["quizid"];
+
+                // hämta en specifik post ur databasen
+                $sql = "SELECT * FROM quiz WHERE ID = $quizid";
+
+            } else {
+                // echo "3";
+                // hämta en random post ur databasen
+                //$sql = "SELECT * FROM quiz WHERE ID = 1";
+                $sql = "SELECT * FROM quiz ORDER BY RAND() LIMIT 1";
+            }
+
             // kör frågan
             $data = $link->query($sql);
             // hämta en rad ur svarsdatan - en array med kolumnnamn

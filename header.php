@@ -54,6 +54,9 @@
             <li><a href="page4.php" <?php if ($menuItem == 7){ echo 'class="active"'; } ?>>Sida 4</a></li>
             <li>|</li>
             <li><a href="page5.php" <?php if ($menuItem == 8){ echo 'class="active"'; } ?>>Sida 5</a></li>
-        </ul>
+            <li>|</li>
+            <li><a href="search.php" <?php if ($menuItem == 9){ echo 'class="active"'; } ?>>Sök quiz</a></li>
+
+       </ul>
 
     </nav>

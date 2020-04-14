@@ -72,32 +72,72 @@
 
             <div class="gallery container">
             
-            <!-- Figure element 4 för bild och bildtext -->
-            <figure class="item">
+                <!-- Figure element 4 för bild och bildtext -->
+                <figure class="item">
 
-            <!-- Bild -->
-            <img src="images/quiz_ex3.PNG" alt="Ex 5">
+                <!-- Bild -->
+                <img src="images/quiz_ex5.PNG" alt="Ex 5">
 
-            <!-- Bildtext -->
-            <figcaption>
-                Exempel 5
-            </figcaption>
+                <!-- Bildtext -->
+                <figcaption>
+                    Exempel 5
+                </figcaption>
 
-            </figure>
-        </div>
+                </figure>
+               
+                <!-- Figure element 4 för bild och bildtext -->
+                <figure class="item">
+
+                <!-- Bild -->
+                <img src="images/quiz_ex6.PNG" alt="Ex 6">
+
+                <!-- Bildtext -->
+                <figcaption>
+                    Exempel 6
+                </figcaption>
+
+                </figure>
+
+                <!-- Figure element 4 för bild och bildtext -->
+                <figure class="item">
+
+                <!-- Bild -->
+                <img src="images/quiz_ex7.PNG" alt="Ex 7">
+
+                <!-- Bildtext -->
+                <figcaption>
+                    Exempel 7
+                </figcaption>
+
+                </figure>
+
+                <!-- Figure element 4 för bild och bildtext -->
+                <figure class="item">
+
+                <!-- Bild -->
+                <img src="images/quiz_ex8.PNG" alt="Ex 8">
+
+                <!-- Bildtext -->
+                <figcaption>
+                    Exempel 8
+                </figcaption>
+
+                </figure>
+
+            </div>
 
         </main>
 
         <aside>
-                <!-- Aside -->
+            <!-- Aside -->
     
-                <h4 style="margin-top: 6em" class="aside aside_gallery">
-                    Exempelbilder
-                </h4>
+            <h4 style="margin-top: 6em" class="aside aside_gallery">
+                Exempelbilder
+            </h4>
 
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi rem ullam labore beatae incidunt velit, repellat praesentium illum tenetur eos esse suscipit consectetur inventore doloribus omnis modi officia corrupti cumque, corporis nostrum. Ipsum cumque fugit suscipit cupiditate neque. Velit odit accusantium saepe, possimus officiis quia consequuntur vero exercitationem non harum.
-                </p>
+            <p>
+                Här finns några exempel på bilder från olika sidor här på Quizmani.
+            </p>
     
         </aside>
     

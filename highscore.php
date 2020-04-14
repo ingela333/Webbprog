@@ -41,6 +41,7 @@
             echo "<th>Rank</th>";
             echo "<th>Quiz</th>";
             echo "<th>Skapare</th>";
+            echo "<th>Kategori</th>";
             echo "<th>Antal</th>";
             echo "</tr>"; "</thead>"; // Avslut tabellrad
             
@@ -51,6 +52,7 @@
                 echo "<td><i>", $rank, "</i></td>";
                 echo "<td><b>", $row["header"], "</b> ", $row["header2"], "</td>";
                 echo "<td>", $row["author"], "</td>";
+                echo "<td>", $row["category"], "</td>";
                 echo "<td>", $row["run"], "</td>";
                 echo "</tr>";
                 $rank = $rank + 1;
