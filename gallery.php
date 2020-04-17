@@ -18,11 +18,11 @@
                 <figure class="item">
 
                     <!-- Bild -->
-                    <img src="images/quiz_ex1.PNG" alt="Ex 1">
+                    <img src="images/quiz_ex1.jpg" alt="Ex 1">
 
                     <!-- Bildtext -->
                     <figcaption>
-                        Exempel 1
+                        Välkommen till Quizmani! Samt sökfunktion.
                     </figcaption>
 
                 </figure>
@@ -31,11 +31,11 @@
                 <figure class="item">
 
                     <!-- Bild -->
-                    <img src="images/quiz_ex2.PNG" alt="Ex 2">
+                    <img src="images/quiz_ex2.jpg" alt="Ex 2">
 
                     <!-- Bildtext -->
                     <figcaption>
-                        Exempel 2
+                        Sökfunktion. Senast skapade quiz.
                     </figcaption>
 
                 </figure>
@@ -44,11 +44,11 @@
                 <figure class="item">
 
                     <!-- Bild -->
-                    <img src="images/quiz_ex3.PNG" alt="Ex 3">
+                    <img src="images/quiz_ex3.jpg" alt="Ex 3">
 
                     <!-- Bildtext -->
                     <figcaption>
-                        Exempel 3
+                        Testa ett quiz!
                     </figcaption>
 
                 </figure>
@@ -57,11 +57,11 @@
                 <figure class="item">
 
                     <!-- Bild -->
-                    <img src="images/quiz_ex4.PNG" alt="Ex 4">
+                    <img src="images/quiz_ex4.jpg" alt="Ex 4">
 
                     <!-- Bildtext -->
                     <figcaption>
-                        Exempel 4
+                        Skapa eget quiz (övre delen) - rubriker, frågor, svar och poäng
                     </figcaption>
 
                 </figure>
@@ -76,11 +76,11 @@
                 <figure class="item">
 
                 <!-- Bild -->
-                <img src="images/quiz_ex5.PNG" alt="Ex 5">
+                <img src="images/quiz_ex5.jpg" alt="Ex 5">
 
                 <!-- Bildtext -->
                 <figcaption>
-                    Exempel 5
+                Skapa eget quiz (nedre delen) - kategori och testresultat 
                 </figcaption>
 
                 </figure>
@@ -89,11 +89,11 @@
                 <figure class="item">
 
                 <!-- Bild -->
-                <img src="images/quiz_ex6.PNG" alt="Ex 6">
+                <img src="images/quiz_ex6.jpg" alt="Ex 6">
 
                 <!-- Bildtext -->
                 <figcaption>
-                    Exempel 6
+                    Alla quiz!
                 </figcaption>
 
                 </figure>
@@ -102,11 +102,11 @@
                 <figure class="item">
 
                 <!-- Bild -->
-                <img src="images/quiz_ex7.PNG" alt="Ex 7">
+                <img src="images/quiz_ex7.jpg" alt="Ex 7">
 
                 <!-- Bildtext -->
                 <figcaption>
-                    Exempel 7
+                    Highscore!
                 </figcaption>
 
                 </figure>
@@ -115,11 +115,11 @@
                 <figure class="item">
 
                 <!-- Bild -->
-                <img src="images/quiz_ex8.PNG" alt="Ex 8">
+                <img src="images/quiz_ex8.jpg" alt="Ex 8">
 
                 <!-- Bildtext -->
                 <figcaption>
-                    Exempel 8
+                    Senast skapade quiz!
                 </figcaption>
 
                 </figure>

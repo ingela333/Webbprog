@@ -36,7 +36,7 @@
         <h3>Sök quiz!</h3>
 
         <p>
-            <input type="text" id="keyword" name="keyword" placeholder="Sök quiz/skapare">
+            <input type="text" id="keyword" name="keyword" placeholder="Sök quiz/skapare/kategori">
         </p>
               
         <!-- Submit -->

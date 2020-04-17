@@ -17,7 +17,7 @@ body {
 header {
     width: 100%;
     height: 200px;
-    background-image: url("../images/bg2.jpg");
+    background-image: url("../images/bg.jpg");
     background-position-y: 50%;
     background-size: 100%;
     position: relative
@@ -77,6 +77,10 @@ nav ul li a {
 nav ul li a:hover {
     color: white;
     text-decoration: underline
+}
+
+nav ul li a.active {
+    color: lightyellow;
 }
 
 /* layout av ytor
@@ -140,6 +144,29 @@ footer img {
     width: 150px;
     border: none;
 }
+
+/* media queries - mobile device
+---------------------------------------------------*/
+@media screen and (min-width: 54px) {		
+    html, nav {
+        min-width: 1530px;
+    }
+    }
+
+@media screen and (min-width: 768px) {
+    html, nav {
+        min-width: 1100px;
+    }
+    }
+
+@media screen and (min-width: 1280px) {
+    html, nav {
+        min-width: 830px;
+    }
+    }
+
+/* galleri
+---------------------------------------------------*/
 
 /* Ange border-box för div element för att inkludera border */
 div {
@@ -230,24 +257,7 @@ p {
     padding-left: 10px
 }
 
-blockquote {
-    font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif
-}
-
-blockquote.poetry {
-    font-family: 'Marck Script', cursive;
-    text-align: center;
-    color: blueviolet
-}
-
-blockquote.runes {
-    font-family: 'Sedgwick Ave Display', cursive;
-    font-style: initial;
-    color: brown
-}
-
-a {
+a, td a {
     text-decoration: none;
 }
 
@@ -258,12 +268,10 @@ a:hover {
 ul {
     list-style-type: center;
     list-style-position: outside;
-    list-style-image: url(images/q5.png);
 }
 
-ol {
-    list-style-type: upper-latin;
-    list-style-position: inside
+a, ul li a {
+    color: black;
 }
 
 b {
@@ -271,24 +279,10 @@ b {
     font-size: 1.1em;
 }
 
-
-
-i {
-    color: blue;
-    font-size: 1.5em;
-    font-weight: bold
-}
-
-q {
-    font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif
-}
-
 img {
     border-radius: 4px;
     border: 1px solid
 }
-
 
 /* tabell
 ---------------------------------------------------*/
@@ -322,7 +316,6 @@ form {
     padding-left: 2px
 }
 
-
 input[type=text] {
     border: 2px solid darkblue;
     border-radius: 4px;
@@ -349,6 +342,10 @@ date {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+input[type=radio] {
+width: 50px;
+}
+
 select {
     border: 2px solid darkblue;
     border-radius: 4px;
@@ -358,11 +355,11 @@ select {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-input[type=submit], input[type=button] {
-    border: 3px solid darkcyan;
+input[type=submit] {
+    border: 3px solid blue;
     border-radius: 4px;
     width: 30%;
-    background-color: aquamarine;
+    background-color: lightblue;
     color: darkblue;
     font-family: 'Marck Script', cursive;
     font-size: 40px;
@@ -411,48 +408,11 @@ form p input#keyword {
 label {
     color: darkblue;
     text-shadow: 2px 2px 5px aquamarine;
-    font-size: 30px;
+    font-size: 27px;
     width: 300px;
     margin: 5px;
     font-family: 'Marck Script', cursive;
-}
-
-div.result_label {
-    /*    box-sizing: border-box; */
-    margin: 0 0 0 10px;
-    float: left;
-    width: 95px
-}
-
-div.result_text {
-    margin: 0 0 0 10px;
-    float: left;
-    width: 600px
-}
-
-/*
-div.answer_label {
-    margin: 0 0 0 10px; 
-    float: left;
-    width: 30px
-}
-
-div.answer_text {
-    margin: 0 0 0 10px; 
-    width: 400px
-}
-
-div.points_label {
-    margin: 0 0 0 10px; 
-    float: left;
-    width: 30px
-}
-
-div.points_text {
-    margin: 0 0 0 10px; 
-    float: left;
-    width: 30px
-}   */
+} 
 
 p:after {
     display: block;

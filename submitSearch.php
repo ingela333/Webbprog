@@ -41,7 +41,7 @@ $keyword = trim ($_POST['keyword']);
 
 // Sökning på tabell quiz
 // Hämta många poster med keyword (ORDER BY header => Fatal error: Uncaught error)
-$sql = "SELECT * FROM quiz WHERE header LIKE '%$keyword%' or header2 LIKE '%$keyword%' or author LIKE '%$keyword%'";
+$sql = "SELECT * FROM quiz WHERE header LIKE '%$keyword%' or header2 LIKE '%$keyword%' or author LIKE '%$keyword%' or category LIKE '%$keyword%'";
 
 $data = $link->query($sql);
 

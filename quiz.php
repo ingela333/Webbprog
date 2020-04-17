@@ -30,9 +30,9 @@
 
         <?php
             // hämta sparad quizid från submitRun.php
-            session_start();
+            // session_start();
 
-            // Kolla om något id är skickat med "a href" från submitSearch.php
+            // Kolla om något id är skickat med "a href" (från många sidor som visar quiz (header/header2))
             if(isset($_GET["id"])) {
                 // echo "1 ", $_GET['id'];
                 $quizid = $_GET['id']; // hämta ID från a href submitSearch.php
@@ -40,12 +40,12 @@
                 $sql = "SELECT * FROM quiz WHERE ID = $quizid";
 
             // Annars: kolla om något id är skickat som variabel från submitRun.php
-            } else if (isset($_SESSION["quizid"])) {
+/*             } else if (isset($_SESSION["quizid"])) {
                 // echo "2 ";
                 $quizid = $_SESSION["quizid"];
 
                 // hämta en specifik post ur databasen
-                $sql = "SELECT * FROM quiz WHERE ID = $quizid";
+                $sql = "SELECT * FROM quiz WHERE ID = $quizid"; */
 
             } else {
                 // echo "3";
@@ -172,28 +172,17 @@
                 // skapa data att skicka (sök UPD)
                 var formData = new FormData();
                 var qid = <?php echo $qid ?>; 
-                var run = <?php echo $run ?>;                  // kolla vilka radio buttons som är valda
-             //   var radio1Check = document.querySelector("input[name='radio1']:checked").value;
-             //   var radio2Check = document.querySelector("input[name='radio2']:checked").value;
-             //   var radio3Check = document.querySelector("input[name='radio3']:checked").value;
-
+                var run = <?php echo $run ?>;                  
 
                 // data till tabell quiz 
                 formData.append("qid", qid); 
                 formData.append("run", run); 
+  
+                // kolla vilka radio buttons som är valda
                 formData.append("r1", document.querySelector("input[name='radio1']:checked").value); 
                 formData.append("r2", document.querySelector("input[name='radio2']:checked").value); 
                 formData.append("r3", document.querySelector("input[name='radio3']:checked").value);
-
-             /* formData.append("r1a", document.getElementById("r1a").value); 
-                formData.append("r1b", document.getElementById("r1b").value); 
-                formData.append("r1c", document.getElementById("r1c").value); 
-                formData.append("r2a", document.getElementById("r2a").value); 
-                formData.append("r2b", document.getElementById("r2b").value); 
-                formData.append("r2c", document.getElementById("r2c").value); 
-                formData.append("r3a", document.getElementById("r3a").value); 
-                formData.append("r3b", document.getElementById("r3b").value); 
-                formData.append("r3c", document.getElementById("r3c").value); */
+                // formData.append("r1a", document.getElementById("r1a").value);            
 
                 // AJAX - skapa objekt XML/http request för att kunna hämta data gm objektet efter att sidan är laddad
                 var xhttp = new XMLHttpRequest();

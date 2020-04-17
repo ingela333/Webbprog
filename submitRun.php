@@ -80,7 +80,6 @@ $points = 0;
 switch ($r1) {
     case 'r1a':
         $ratio1 = $points1a / $high1; // 5/9
-        //echo $points;
     break;   
 
     case 'r1b':
@@ -98,7 +97,6 @@ $points = 0;
 switch ($r2) {
     case 'r2a':
         $ratio2 = $points2a / $high2; // 5/9
-        //echo $points;
     break;   
  
     case 'r2b':
@@ -116,7 +114,6 @@ $points = 0;
 switch ($r3) {
     case 'r3a':
         $ratio3 = $points3a / $high3; // 3/7
-        //echo $points;
     break;   
 
     case 'r3b':
@@ -128,11 +125,23 @@ switch ($r3) {
     break;   
 }
 
+// antal frågor som ska räknas med vid viktning av förhållandet
+// (Om alla svar a, b och c blir noll - ska ej räknas med. 1-9 relevant!)
+$nr = 0;
+if($high1>0.1) {
+    $nr += 1;
+};
+if($high2>0.1) {
+    $nr += 1;
+};
+if($high3>0.1) {
+    $nr += 1;
+};
+
 // alla frågors totala förhållandet av alla poäng
-$ratio = ($ratio1 + $ratio2 + $ratio3) / 3;
+$ratio = ($ratio1 + $ratio2 + $ratio3) / $nr; // /3
 
 // visa testresultat beroende på totala förhållande (proc: 0-33, 34-67, 68-100%)
-
 if ($ratio<=0.33) {
     $resultx = $row["result1"];   
 
@@ -143,7 +152,6 @@ if ($ratio<=0.33) {
     $resultx = $row["result3"];   
    
 }
-
    
 
 
@@ -156,9 +164,7 @@ if ($ratio<=0.33) {
     $sql = "UPDATE quiz SET run = $run WHERE ID = $qid";
     $link->query($sql);
 
-
     echo "<h4>Testresultat!</h4>";
- //   echo "&nbsp;&nbsp;&nbsp;<b>", $resultx, "</b><br><br>";
     echo "&nbsp;&nbsp;&nbsp;<h5>", $resultx, "</h5><br><br>";
 
 
@@ -166,19 +172,20 @@ if ($ratio<=0.33) {
     //// Föreslå nya tester
     echo "<h4>Köra nytt quiz?</h4>";
 
-    // Hämta många poster
-    $sql = "SELECT * FROM quiz ORDER BY RAND() LIMIT 1";
+
+
+    // Hämta en slumpad post
+    $sql = "SELECT * FROM quiz ORDER BY RAND() LIMIT 5";
     $data = $link->query($sql);
     // loop för att hämta en rad i taget
     while($row = $data->fetch_assoc()){
-        echo "<a href='quiz.php'>&nbsp;&nbsp;&nbsp;";
-        echo "<b>", $row["header"], "</b> ", $row["header2"], "</a><br>";
-        
-        $quizid = $row["ID"];
-
-        // spara quizid för att använda i quiz.php
-        session_start();
-        $_SESSION["quizid"] = $quizid;
+        $quizid = $row["ID"]; 
+        echo "<a href='quiz.php?id=".$quizid."'><b>&nbsp;&nbsp;&nbsp;", $row["header"], "</b> ", $row["header2"], "</a><br>";
+    
+        // spara quizid för att använda i quiz.php 
+        // (ändrat till länk a href med id $quizid istället för att undvika session_start)
+        // session_start();
+        // $_SESSION["quizid"] = $quizid;
     }
     echo "<br><br>";
 

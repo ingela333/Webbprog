@@ -3,12 +3,14 @@
 $sql = "SELECT * FROM quiz ORDER BY id DESC";
 $data = $link->query($sql);
             
-echo "<ul style='list-style-image: url(images/q5.png)'>";
+// Punktlista av bilder 
+echo "<ul style='list-style-image: url(images/q.jpg)'>";
 
 $i = 1;
-// loop för att hämta en rad i taget
+// loop för att hämta en rad i taget - max 10 st
 while($row = $data->fetch_assoc() and $i<=10){                               
-    echo "<li><b>", $row["header"], "</b> ", $row["header2"], "</li><br>";
+    $quizid = $row["ID"]; 
+    echo "<li><a href='quiz.php?id=".$quizid."'><b>", $row["header"], "</b> ", $row["header2"], "</a></li><br>";
     $i += 1;
 }
 echo "</ul>";

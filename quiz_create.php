@@ -88,7 +88,7 @@
 
                 <p>
                     <label for="text">2.</label>
-                    <input type="text" id="question2" name="question2" placeholder="Fyll i fråga 2 här" 
+                    <input type="text" id="question2" name="question2" placeholder="Fyll i fråga 2 här" required
                         minlength="4" maxlength="256">
                 </p>
 
@@ -96,27 +96,27 @@
 
                 <p>
                     <label for="text">a.</label>
-                    <input type="text" id="answer2a" name="answer2a" placeholder="Svar 1"  minlength="1"
+                    <input type="text" id="answer2a" name="answer2a" placeholder="Svar 1" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points2a" id="points2a"  min="0" max="9">
+                    <input type="number" name="points2a" id="points2a" required min="0" max="9">
                     <br>
 
                     <label for="text">b.</label>
-                    <input type="text" id="answer2b" name="answer2b" placeholder="Svar 2" minlength="1"
+                    <input type="text" id="answer2b" name="answer2b" placeholder="Svar 2" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points2b" id="points2b"  min="0" max="9">
+                    <input type="number" name="points2b" id="points2b" required min="0" max="9">
                     <br>
 
                     <label for="text">c.</label>
-                    <input type="text" id="answer2c" name="answer2c" placeholder="Svar 3"  minlength="1"
+                    <input type="text" id="answer2c" name="answer2c" placeholder="Svar 3" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points2c" id="points2c" min="0" max="9">
+                    <input type="number" name="points2c" id="points2c" required min="0" max="9">
                     <br>
 
                 </p>
@@ -125,7 +125,7 @@
 
                 <p>
                     <label for="text">3.</label>
-                    <input type="text" id="question3" name="question3" placeholder="Fyll i fråga 3 här" 
+                    <input type="text" id="question3" name="question3" placeholder="Fyll i fråga 3 här" required
                         minlength="4" maxlength="256">
                 </p>
                
@@ -133,27 +133,27 @@
 
                 <p>
                     <label for="text">a.</label>
-                    <input type="text" id="answer3a" name="answer3a" placeholder="Svar 1" minlength="1"
+                    <input type="text" id="answer3a" name="answer3a" placeholder="Svar 1" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points3a" id="points3a" min="0" max="9">
+                    <input type="number" name="points3a" id="points3a" required min="0" max="9">
                     <br>
 
                     <label for="text">b.</label>
-                    <input type="text" id="answer3b" name="answer3b" placeholder="Svar 2" minlength="1"
+                    <input type="text" id="answer3b" name="answer3b" placeholder="Svar 2" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points3b" id="points3b" min="0" max="9">
+                    <input type="number" name="points3b" id="points3b" required min="0" max="9">
                     <br>
 
                     <label for="text">c.</label>
-                    <input type="text" id="answer3c" name="answer3c" placeholder="Svar 3" minlength="1"
+                    <input type="text" id="answer3c" name="answer3c" placeholder="Svar 3" required minlength="1"
                         maxlength="256">
 
                     <label for="number">Poäng:</label>
-                    <input type="number" name="points3c" id="points3c" min="0" max="9">
+                    <input type="number" name="points3c" id="points3c" required min="0" max="9">
                     <br>
 
                 </p>

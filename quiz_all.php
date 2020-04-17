@@ -37,13 +37,11 @@
                 // loop för att hämta en rad i taget
                 while($row = $data->fetch_assoc()){
                     if($row["category"] !== $cat) {              
-                        echo "<h4>", $row["category"], "</h4>";  
-                 //       <h1 style=”font-size: 3em; margin-top: 1em; color: darkgreen”>
-                 //           style="font-size: 3em"
+                        echo "<br><h4>", $row["category"], "</h4>";  
                         $cat = $row["category"]; 
                     }
-
-                    echo "<b>", $row["header"], "</b> ", $row["header2"], "<br>";            
+                    $quizid = $row["ID"];
+                    echo "<a href='quiz.php?id=".$quizid."'><b>", $row["header"], "</b> ", $row["header2"], "</a><br>";
                 }
                 echo "<br><br>";
 

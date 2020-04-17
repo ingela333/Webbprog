@@ -46,18 +46,19 @@
             echo "</tr>"; "</thead>"; // Avslut tabellrad
             
             $rank = 1;
-            // loop för att hämta en rad i taget
-            while($row = $data->fetch_assoc() and $rank<=50){                               
+            // loop för att hämta en rad i taget - max 50 st
+            while($row = $data->fetch_assoc() and $rank<=50){  
+                $quizid =  $row["ID"];                            
                 echo "<tbody>", "<tr>";
                 echo "<td><i>", $rank, "</i></td>";
-                echo "<td><b>", $row["header"], "</b> ", $row["header2"], "</td>";
+                echo "<td><a href='quiz.php?id=".$quizid."'><b>", $row["header"], "</b> ", $row["header2"], "</a></td>";
                 echo "<td>", $row["author"], "</td>";
                 echo "<td>", $row["category"], "</td>";
                 echo "<td>", $row["run"], "</td>";
                 echo "</tr>";
                 $rank = $rank + 1;
-                    
             }
+            
             // Avslut tabell
             echo "</tbody>", "</table>";
 
